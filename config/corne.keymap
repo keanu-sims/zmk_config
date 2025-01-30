@@ -194,7 +194,7 @@
 &kp ESCAPE  &kp Q             &kp W          &kp E             &kp R               &kp T             &kp Y         &kp U                &kp I              &kp O                  &kp SQT            &smart_mark
 &kp TAB     &HRML LEFT_GUI A  &HRML LCTRL S  &HRML LEFT_ALT D  &HRML LEFT_SHIFT F  &kp G             &kp H         &HRMR RIGHT_SHIFT J  &HRMR RIGHT_ALT K  &HRMR RIGHT_CONTROL L  &HRMR RIGHT_GUI P  &kp BACKSPACE
 &kp LCTRL   &kp Z             &kp X          &kp C             &kp V               &kp B             &kp N         &kp M                &smart_comma       &smart_period          &kp UNDERSCORE     &kp ENTER
-                                             &none             &none               &kp LEFT_SHIFT    &smart_space  &to 1                &to 4
+                                             &to 5             &none               &kp LEFT_SHIFT    &smart_space  &to 1                &to 4
             >;
         };
 
@@ -253,7 +253,7 @@
 &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4    &kp N5       &none  &none  &none  &none  &none  &none
 &kp TAB    &kp N6  &kp Q   &kp W   &kp E     &kp R        &none  &none  &none  &none  &none  &none
 &kp LCTRL  &kp N7  &kp A   &kp S   &kp D     &kp F        &none  &none  &none  &none  &none  &none
-                           &kp Z   &kp LALT  &kp LSHFT    &none  &none  &to 0
+                           &kp Z   &kp LALT  &kp LSHFT    &none  &to 0  &to 0
             >;
         };
     };
