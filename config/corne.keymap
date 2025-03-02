@@ -113,7 +113,7 @@
         smart_under: smart_under {
             compatible = "zmk,behavior-mod-morph";
             label = "SMART_UNDER";
-            bindings = <&kp UNDERSCORE>, <&kp SLASH>;
+            bindings = <&kp UNDERSCORE>, <&kp C>;
 
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
