@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -68,7 +67,7 @@
         smart_space: smart_space {
             compatible = "zmk,behavior-mod-morph";
             label = "SMART_SPACE";
-            bindings = <&kp SPACE>, <&kp BACKSPACE>;
+            bindings = <&kp SPACE>, <&tog 2>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -229,10 +228,10 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp Q  &kp W            &kp E                  &kp R             &kp T             &kp Y         &kp U            &kp I         &kp O          &kp SQT             &smart_mark
-&kp TAB     &kp A  &kp S            &TAPHOLD UP_ARROW D    &kp F             &kp G             &kp H         &kp J            &kp K         &kp L          &kp P               &kp BACKSPACE
-&kp LCTRL   &kp Z  &TAPHOLD LEFT X  &TAPHOLD DOWN_ARROW C  &TAPHOLD RIGHT V  &kp B             &kp N         &kp M            &smart_comma  &smart_period  &smart_under_equal  &kp ENTER
-                                    &none                  &kp LEFT_ALT      &kp LEFT_SHIFT    &smart_space  &lt 1 BACKSPACE  &to 4
+&kp ESCAPE  &kp Q  &kp W            &kp E                  &kp R             &kp T             &kp Y         &kp U   &kp I         &kp O          &kp SQT             &smart_mark
+&kp TAB     &kp A  &kp S            &TAPHOLD UP_ARROW D    &kp F             &kp G             &kp H         &kp J   &kp K         &kp L          &kp P               &kp BACKSPACE
+&kp LCTRL   &kp Z  &TAPHOLD LEFT X  &TAPHOLD DOWN_ARROW C  &TAPHOLD RIGHT V  &kp B             &kp N         &kp M   &smart_comma  &smart_period  &smart_under_equal  &kp ENTER
+                                    &tog 1                 &kp LEFT_ALT      &kp LEFT_SHIFT    &smart_space  &tog 1  &to 4
             >;
         };
 
@@ -254,10 +253,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&none             &none  &none  &none  &none         &none             &none     &none     &none   &none      &none  &none
+&none             &none  &none  &none  &none         &none             &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
+&kp LEFT_CONTROL  &none  &none  &none  &none         &none             &none     &none     &none   &none      &none  &none
+                                &none  &kp LEFT_ALT  &kp LEFT_SHIFT    &none     &none     &none
             >;
         };
 
