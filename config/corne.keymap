@@ -67,7 +67,7 @@
         smart_space: smart_space {
             compatible = "zmk,behavior-mod-morph";
             label = "SMART_SPACE";
-            bindings = <&kp SPACE>, <&tog 4>;
+            bindings = <&kp SPACE>, <&tog 0>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -140,7 +140,7 @@
             key-positions = <20 19>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         bracket_R {
@@ -148,7 +148,7 @@
             key-positions = <20 21>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         paren_L {
@@ -156,7 +156,7 @@
             key-positions = <31 32>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         paren_R {
@@ -172,7 +172,7 @@
             key-positions = <20 21 19>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         plus_minus {
@@ -180,7 +180,7 @@
             key-positions = <21 19>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         multi_div {
@@ -188,7 +188,7 @@
             key-positions = <31 33>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         mark {
@@ -196,7 +196,7 @@
             key-positions = <7 9>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         boot_left {
@@ -204,7 +204,7 @@
             key-positions = <1 2 0>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         boot_right {
@@ -212,7 +212,7 @@
             key-positions = <11 10 9>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         to_base_layer {
@@ -220,7 +220,7 @@
             key-positions = <16 17 18 19 15 20>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
 
         to_cole_layer {
@@ -228,7 +228,7 @@
             key-positions = <27 28 29 30 31 32>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0 2 1>;
+            layers = <0 1>;
         };
     };
 
@@ -247,59 +247,61 @@
 &kp ESCAPE  &kp Q  &kp W  &kp E  &kp R         &kp T             &kp Y        &kp U  &kp I         &kp O          &kp SQT             &smart_mark
 &kp TAB     &kp A  &kp S  &kp D  &kp F         &kp G             &kp H        &kp J  &kp K         &kp L          &kp P               &kp BACKSPACE
 &kp LCTRL   &kp Z  &kp X  &kp C  &kp V         &kp B             &kp N        &kp M  &smart_comma  &smart_period  &smart_under_equal  &kp ENTER
-                          &none  &kp LEFT_ALT  &kp LEFT_SHIFT    &lt 2 SPACE  &mo 4  &none
+                          &none  &kp LEFT_ALT  &kp LEFT_SHIFT    &lt 3 SPACE  &mo 6  &none
             >;
         };
 
         cole_layer {
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F  &kp P     &kp B        &kp J        &kp L  &kp U         &kp Y          &kp SQT             &smart_mark
-&kp TAB    &kp A  &kp R  &kp S  &kp T     &kp G        &kp M        &kp N  &kp E         &kp I          &kp O               &kp BSPC
-&kp LCTRL  &kp Z  &kp X  &kp C  &kp D     &kp V        &kp K        &kp H  &smart_comma  &smart_period  &smart_under_equal  &kp ENTER
-                         &none  &kp LALT  &kp LSHFT    &lt 2 SPACE  &mo 4  &none
+&kp ESC    &kp Q  &kp W          &kp F             &kp P               &kp B        &kp J        &kp L           &kp U              &kp Y          &kp SQT             &smart_mark
+&kp TAB    &kp A  &HRML LCTRL R  &HRML LEFT_ALT S  &HRML LEFT_SHIFT T  &kp G        &kp M        &HRMR RSHIFT N  &HRMR RIGHT_ALT E  &HRMR RCTRL I  &kp O               &kp BSPC
+&kp LCTRL  &kp Z  &kp X          &kp C             &kp D               &kp V        &kp K        &kp H           &smart_comma       &smart_period  &smart_under_equal  &kp ENTER
+                                 &none             &kp LALT            &kp LSHFT    &lt 3 SPACE  &to 5           &none
             >;
         };
 
-        number_layer {
+        FN {
             bindings = <
-&kp ESCAPE  &none   &none    &none     &none     &none             &none      &none   &none         &none          &none               &smart_mark
-&kp TAB     &kp N1  &kp N2   &kp N3    &kp N4    &none             &none      &kp N5  &kp N6        &kp N7         &kp N8              &kp BACKSPACE
-&kp LCTRL   &none   &kp SQT  &kp BSLH  &kp N0    &none             &none      &kp N9  &smart_comma  &smart_period  &smart_under_equal  &kp ENTER
-                             &mo 3     &kp LALT  &kp LEFT_SHIFT    &kp SPACE  &none   &none
+&none  &none  &none   &none   &none   &none      &none    &none   &none    &none   &none  &none
+&none  &none  &kp F1  &kp F2  &kp F3  &kp F11    &kp F12  &kp F4  &kp F5   &kp F6  &none  &none
+&none  &none  &none   &kp F7  &kp F8  &none      &none    &kp F9  &kp F10  &none   &none  &none
+                      &none   &none   &none      &none    &none   &none
             >;
         };
 
-        fn_layer {
+        numbers_layer {
             bindings = <
-&none      &none   &none   &none   &none     &none        &none  &none   &none   &none   &none   &none
-&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4    &none        &none  &kp F4  &kp F5  &kp F6  &kp F7  &none
-&kp LCTRL  &none   &none   &none   &none     &none        &none  &none   &none   &none   &none   &none
-                           &none   &kp LALT  &kp LSHFT    &none  &none   &none
+&none  &none  &none   &none   &none   &none             &none      &none   &none   &none   &none  &none
+&none  &none  &kp N1  &kp N2  &kp N3  &kp BSLH          &kp GRAVE  &kp N4  &kp N5  &kp N6  &none  &none
+&none  &none  &none   &kp N7  &kp N8  &none             &none      &kp N9  &kp N0  &none   &none  &none
+                      &mo 2   &mo 2   &kp LEFT_SHIFT    &none      &none   &none
             >;
         };
 
-        move_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            display-name = "Lower";
+        symbols_layer {
             bindings = <
-&kp ESCAPE        &none  &none  &none  &none         &none             &none     &none     &none   &none      &none  &none
-&none             &none  &none  &none  &none         &none             &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
-&kp LEFT_CONTROL  &none  &none  &none  &none         &none             &none     &none     &none   &none      &none  &none
-                                &none  &kp LEFT_ALT  &kp LEFT_SHIFT    &none     &none     &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+                     &none  &none  &none    &none  &none  &none
             >;
         };
 
-        FPS {
+        navigation_layer {
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3  &kp N4    &kp N5       &none  &none  &none  &none  &none  &none
-&kp TAB    &kp N6  &kp Q   &kp W   &kp E     &kp R        &none  &none  &none  &none  &none  &none
-&kp LCTRL  &kp N7  &kp A   &kp S   &kp D     &kp F        &none  &none  &none  &none  &none  &none
-                           &kp Z   &kp LALT  &kp LSHFT    &none  &to 0  &to 0
+&none  &none  &none           &none           &none            &none    &none  &none            &none          &none      &none  &none
+&none  &none  &none           &kp UP_ARROW    &none            &none    &none  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RCTRL  &none  &none
+&none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none    &none  &none            &none          &none      &none  &none
+                              &none           &none            &to 1    &to 1  &none            &none
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&none  &none  &none           &none           &none            &none    &none  &none            &none          &none      &none  &none
+&none  &none  &none           &kp UP_ARROW    &none            &none    &none  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RCTRL  &none  &none
+&none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none    &none  &none            &none          &none      &none  &none
+                              &none           &none            &to 0    &to 0  &none            &none
             >;
         };
 
@@ -309,15 +311,6 @@
 &kp TAB    &kp TAB  &kp Q   &kp W     &kp E     &kp R                   &none  &none  &none  &none  &none  &none
 &kp LCTRL  &none    &kp A   &kp S     &kp D     &kp F                   &none  &none  &none  &none  &none  &none
                             &kp LALT  &kp LALT  &mt LEFT_SHIFT SPACE    &none  &none  &to 0
-            >;
-        };
-
-        rumble {
-            bindings = <
-&kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P          &kp F1
-&kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp P          &kp TAB
-&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp LS(UNDER)  &kp MINUS
-                         &none  &none  &kp LSHFT    &kp SPACE  &none  &to 0
             >;
         };
     };
