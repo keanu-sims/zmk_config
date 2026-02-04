@@ -217,7 +217,7 @@
 
         to_base_layer {
             bindings = <&to 0>;
-            key-positions = <16 17 18 19 15 20>;
+            key-positions = <16 17 18 19>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
             layers = <0 1>;
@@ -225,7 +225,15 @@
 
         to_cole_layer {
             bindings = <&to 1>;
-            key-positions = <27 28 29 30 31 32>;
+            key-positions = <28 29 30 31>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
+            layers = <0 1>;
+        };
+
+        lol {
+            bindings = <&to 7>;
+            key-positions = <4 5 6 7>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
             layers = <0 1>;
@@ -272,7 +280,7 @@
         numbers_layer {
             bindings = <
 &none  &none  &none   &none   &none   &none             &none      &none   &none   &none   &none  &none
-&none  &none  &kp N1  &kp N2  &kp N3  &kp BSLH          &kp GRAVE  &kp N4  &kp N5  &kp N6  &none  &none
+&none  &none  &kp N1  &kp N2  &kp N3  &kp BSLH          &kp GRAVE  &kp N4  &kp N5  &kp N6  &none  &kp BACKSPACE
 &none  &none  &none   &kp N7  &kp N8  &none             &none      &kp N9  &kp N0  &none   &none  &none
                       &mo 2   &mo 2   &kp LEFT_SHIFT    &none      &none   &none
             >;
@@ -290,9 +298,9 @@
         navigation_layer {
             bindings = <
 &none  &none  &none           &none           &none            &none    &none  &none            &none          &none      &none  &none
-&none  &none  &none           &kp UP_ARROW    &none            &none    &none  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RCTRL  &none  &none
+&none  &none  &none           &kp UP_ARROW    &none            &none    &none  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RCTRL  &none  &kp BACKSPACE
 &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none    &none  &none            &none          &none      &none  &none
-                              &none           &none            &to 1    &to 1  &none            &none
+                              &none           &none            &to 1    &to 1  &to 1            &none
             >;
         };
 
