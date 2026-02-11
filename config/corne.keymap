@@ -261,10 +261,10 @@
 
         cole_layer {
             bindings = <
-&kp ESC    &kp Q  &kp W          &kp F             &kp P               &kp B        &kp J        &kp L           &kp U              &kp Y          &kp SQT             &smart_mark
-&kp TAB    &kp A  &HRML LCTRL R  &HRML LEFT_ALT S  &HRML LEFT_SHIFT T  &kp G        &kp M        &HRMR RSHIFT N  &HRMR RIGHT_ALT E  &HRMR RCTRL I  &kp O               &kp BSPC
-&kp LCTRL  &kp Z  &kp X          &kp C             &kp D               &kp V        &kp K        &kp H           &smart_comma       &smart_period  &smart_under_equal  &kp ENTER
-                                 &none             &kp LALT            &kp LSHFT    &lt 3 SPACE  &to 5           &none
+&kp Q  &kp W  &kp F  &kp P    &kp B                 &none              &none            &kp J            &kp L       &kp U      &kp Y    &kp SQT
+&kp A  &kp R  &kp S  &kp T    &kp G                 &none              &none            &kp M            &kp N       &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C  &kp D    &kp V                 &none              &none            &kp K            &kp H       &kp COMMA  &kp DOT  &smart_under_equal
+                     &kp TAB  &mt LEFT_SHIFT SPACE  &mt LCTRL ENTER    &lt 3 BACKSPACE  &mt RSHFT SPACE  &kp ESCAPE
             >;
         };
 
@@ -279,10 +279,10 @@
 
         numbers_layer {
             bindings = <
-&none  &none  &none   &none   &none   &none             &none      &none   &none   &none   &none  &none
-&none  &none  &kp N1  &kp N2  &kp N3  &kp BSLH          &kp GRAVE  &kp N4  &kp N5  &kp N6  &none  &kp BACKSPACE
-&none  &none  &none   &kp N7  &kp N8  &none             &none      &kp N9  &kp N0  &none   &none  &none
-                      &mo 2   &mo 2   &kp LEFT_SHIFT    &none      &none   &none
+&none  &none         &none         &none         &none  &none             &none  &none  &none         &none   &none         &none
+&none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none  &none             &none  &none  &kp NUMBER_4  &kp N5  &kp NUMBER_6  &kp BACKSPACE
+&none  &none         &kp N7        &kp N8        &none  &none             &none  &none  &kp N0        &none   &none         &none
+                                   &mo 2         &mo 2  &kp LEFT_SHIFT    &none  &none  &none
             >;
         };
 
@@ -297,10 +297,10 @@
 
         navigation_layer {
             bindings = <
-&none  &none  &none           &none           &none            &none    &none  &none            &none          &none      &none  &none
-&none  &none  &none           &kp UP_ARROW    &none            &none    &none  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RCTRL  &none  &kp BACKSPACE
-&none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none    &none  &none            &none          &none      &none  &none
-                              &none           &none            &to 1    &to 1  &to 1            &none
+&none  &none     &kp UP    &none      &none  &none    &none  &none            &none          &none      &none  &none
+&none  &kp LEFT  &kp DOWN  &kp RIGHT  &none  &none    &none  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RCTRL  &none  &kp BACKSPACE
+&none  &none     &none     &none      &none  &none    &none  &none            &none          &none      &none  &none
+                           &none      &none  &to 1    &to 1  &to 1            &none
             >;
         };
 
