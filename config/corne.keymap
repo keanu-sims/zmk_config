@@ -109,10 +109,10 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        smart_under_equal: smart_under_equal {
+        smart_under: smart_under {
             compatible = "zmk,behavior-mod-morph";
-            label = "SMART_UNDER_EQUAL";
-            bindings = <&kp UNDERSCORE>, <&kp EQUAL>;
+            label = "SMART_UNDER";
+            bindings = <&kp UNDERSCORE>, <&kp BACKSLASH>;
 
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
@@ -252,18 +252,18 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R         &kp T             &kp Y        &kp U  &kp I         &kp O          &kp SQT             &smart_mark
-&kp TAB     &kp A  &kp S  &kp D  &kp F         &kp G             &kp H        &kp J  &kp K         &kp L          &kp P               &kp BACKSPACE
-&kp LCTRL   &kp Z  &kp X  &kp C  &kp V         &kp B             &kp N        &kp M  &smart_comma  &smart_period  &smart_under_equal  &kp ENTER
+&kp ESCAPE  &kp Q  &kp W  &kp E  &kp R         &kp T             &kp Y        &kp U  &kp I         &kp O          &kp SQT       &smart_mark
+&kp TAB     &kp A  &kp S  &kp D  &kp F         &kp G             &kp H        &kp J  &kp K         &kp L          &kp P         &kp BACKSPACE
+&kp LCTRL   &kp Z  &kp X  &kp C  &kp V         &kp B             &kp N        &kp M  &smart_comma  &smart_period  &smart_under  &kp ENTER
                           &none  &kp LEFT_ALT  &kp LEFT_SHIFT    &lt 3 SPACE  &mo 6  &none
             >;
         };
 
         cole_layer {
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F  &kp P                 &kp B    &kp J  &kp L            &kp U         &kp Y          &kp APOS            &smart_mark
-&kp TAB    &kp A  &kp R  &kp S  &kp T                 &kp G    &kp M  &kp N            &kp E         &kp I          &kp O               &kp BSPC
-&kp LCTRL  &kp Z  &kp X  &kp C  &kp D                 &kp V    &kp K  &kp H            &smart_comma  &smart_period  &smart_under_equal  &kp ENTER
+&kp ESC    &kp Q  &kp W  &kp F  &kp P                 &kp B    &kp J  &kp L            &kp U         &kp Y          &kp APOS      &smart_mark
+&kp TAB    &kp A  &kp R  &kp S  &kp T                 &kp G    &kp M  &kp N            &kp E         &kp I          &kp O         &kp BSPC
+&kp LCTRL  &kp Z  &kp X  &kp C  &kp D                 &kp V    &kp K  &kp H            &smart_comma  &smart_period  &smart_under  &kp ENTER
                          &none  &mt LEFT_SHIFT SPACE  &none    &mo 3  &mt RSHFT SPACE  &none
             >;
         };
@@ -279,10 +279,10 @@
 
         numbers_layer {
             bindings = <
-&none  &none         &none         &none         &none  &none             &none  &none  &none         &none   &none         &none
-&none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none  &none             &none  &none  &kp NUMBER_4  &kp N5  &kp NUMBER_6  &kp BACKSPACE
-&none  &none         &kp N7        &kp N8        &none  &none             &none  &none  &kp N0        &none   &none         &none
-                                   &mo 2         &mo 2  &kp LEFT_SHIFT    &none  &none  &none
+&none  &none  &none   &none   &none   &none             &none  &none   &none   &none   &none  &none
+&none  &none  &kp N1  &kp N2  &kp N3  &none             &none  &kp N4  &kp N5  &kp N6  &none  &kp BACKSPACE
+&none  &none  &none   &kp N7  &kp N8  &none             &none  &kp N9  &kp N0  &none   &none  &kp ENTER
+                      &mo 2   &mo 2   &kp LEFT_SHIFT    &none  &none   &none
             >;
         };
 
