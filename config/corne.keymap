@@ -261,10 +261,10 @@
 
         cole_layer {
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F  &kp P                 &kp B    &kp J  &kp L            &kp U         &kp Y          &kp APOS      &smart_mark
-&kp TAB    &kp A  &kp R  &kp S  &kp T                 &kp G    &kp M  &kp N            &kp E         &kp I          &kp O         &kp BSPC
-&kp LCTRL  &kp Z  &kp X  &kp C  &kp D                 &kp V    &kp K  &kp H            &smart_comma  &smart_period  &smart_under  &kp ENTER
-                         &none  &mt LEFT_SHIFT SPACE  &none    &mo 3  &mt RSHFT SPACE  &none
+&kp ESC    &kp Q  &kp W  &kp F  &kp P  &kp B                   &kp J                  &kp L  &kp U         &kp Y          &kp APOS      &smart_mark
+&kp TAB    &kp A  &kp R  &kp S  &kp T  &kp G                   &kp M                  &kp N  &kp E         &kp I          &kp O         &kp BSPC
+&kp LCTRL  &kp Z  &kp X  &kp C  &kp D  &kp V                   &kp K                  &kp H  &smart_comma  &smart_period  &smart_under  &kp ENTER
+                         &none  &mo 3  &mt LEFT_SHIFT SPACE    &mt RIGHT_SHIFT SPACE  &mo 3  &none
             >;
         };
 
