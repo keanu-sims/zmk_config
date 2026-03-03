@@ -274,14 +274,6 @@
     combos {
         compatible = "zmk,combos";
 
-        bracket_L {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <20 19>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <150>;
-            layers = <0>;
-        };
-
         boot_left {
             bindings = <&bootloader>;
             key-positions = <1 2 0>;
