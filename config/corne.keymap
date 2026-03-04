@@ -329,24 +329,16 @@
             layers = <0>;
         };
 
-        boot_right {
-            bindings = <&bootloader>;
-            key-positions = <11 10 9>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <150>;
-            layers = <0>;
-        };
-
         delete {
             bindings = <&kp DELETE>;
             key-positions = <11 10>;
-            layers = <0 1>;
+            layers = <0 1 3>;
         };
 
         s {
             bindings = <&tog 4>;
             key-positions = <37 40>;
-            layers = <0 1>;
+            layers = <0 4>;
         };
     };
 
