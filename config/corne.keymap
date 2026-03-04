@@ -375,10 +375,10 @@
 
         numbers_layer {
             bindings = <
-&kp DOLLAR  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp HASH                 &none    &none  &kp EXCL                 &kp QUESTION    &kp AMPERSAND  &kp PIPE         &kp BACKSPACE
-&kp LT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PERCENT              &none    &none  &kp KP_EQUAL             &kp KP_PLUS     &kp KP_MINUS   &kp KP_MULTIPLY  &kp KP_DIVIDE
-&kp GT      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp AT_SIGN              &none    &none  &kp BACKSLASH            &kp UNDERSCORE  &kp KP_COMMA   &kp PERIOD       &kp ENTER
-                                              &none            &spaceSuperLeft 3 SPACE  &none    &none  &spaceSuperLeft 3 SPACE  &none
+&kp DOLLAR  &kp N7  &kp N8  &kp N9  &kp HASH                 &none    &none  &kp EXCL                 &kp QUESTION    &kp AMPERSAND  &kp PIPE         &kp BACKSPACE
+&kp LT      &kp N4  &kp N5  &kp N6  &kp PERCENT              &none    &none  &kp KP_EQUAL             &kp KP_PLUS     &kp KP_MINUS   &kp KP_MULTIPLY  &kp KP_DIVIDE
+&kp GT      &kp N1  &kp N2  &kp N3  &kp N0                   &none    &none  &kp BACKSLASH            &kp UNDERSCORE  &kp COMMA      &kp PERIOD       &kp ENTER
+                            &none   &spaceSuperLeft 3 SPACE  &none    &none  &spaceSuperLeft 3 SPACE  &none
             >;
         };
 
