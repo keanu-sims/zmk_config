@@ -392,10 +392,10 @@
 
         super_layer {
             bindings = <
-&kp ESCAPE       &none               &none           &none                 &none               &none    &none  &none   &none   &none  &none  &kp BACKSPACE
-&kp TAB          &superMod LEFT_ALT  &kp UP_ARROW    &superMod LEFT_SHIFT  &none               &none    &none  &tog 1  &tog 2  &none  &none  &none
-&superMod LCTRL  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW       &superMod LEFT_GUI  &none    &none  &none   &none   &none  &none  &kp ENTER
-                                                     &none                 &to 0               &none    &none  &to 0   &none
+&kp ESCAPE       &none               &none           &none                 &none               &none    &none  &none  &none   &none   &none  &kp BACKSPACE
+&kp TAB          &superMod LEFT_ALT  &kp UP_ARROW    &superMod LEFT_SHIFT  &none               &none    &none  &none  &tog 1  &tog 2  &none  &none
+&superMod LCTRL  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW       &superMod LEFT_GUI  &none    &none  &none  &none   &none   &none  &kp ENTER
+                                                     &none                 &to 0               &none    &none  &to 0  &none
             >;
         };
 
