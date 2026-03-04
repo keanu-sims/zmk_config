@@ -274,7 +274,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDSPACE";
             #binding-cells = <0>;
-            bindings = <&spaceSuperLeft 7 SPACE>, <&kp TAB>;
+            bindings = <&spaceSuperLeft 3 SPACE>, <&kp TAB>;
         };
 
         spaceSuperLeft: spaceSuperLeft {
@@ -297,6 +297,24 @@
             release-after-ms = <1000>;
             quick-release;
             ignore-modifiers;
+        };
+
+        superquote: superquote {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SUPERQUOTE";
+            bindings = <&kp DOUBLE_QUOTES>, <&kp SINGLE_QUOTE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        superquoteFinal: superquoteFinal {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SUPERQUOTEFINAL";
+            bindings = <&superquote>, <&kp GRAVE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
         };
     };
 
@@ -322,13 +340,13 @@
         delete {
             bindings = <&kp DELETE>;
             key-positions = <11 10>;
-            layers = <0 2 1 3 4>;
+            layers = <0 1>;
         };
 
         s {
-            bindings = <&tog 6>;
-            key-positions = <38 39>;
-            layers = <0 2 1 3 4 6>;
+            bindings = <&tog 4>;
+            key-positions = <37 40>;
+            layers = <0 1>;
         };
     };
 
@@ -347,73 +365,46 @@
 
         base_layer {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P  &kp B                    &none    &none  &kp J                  &kp L  &kp U         &kp Y          &kp BSPC
-&kp A  &kp R  &kp S  &kp T  &kp G                    &none    &none  &kp M                  &kp N  &kp E         &kp I          &kp O
-&kp Z  &kp X  &kp C  &kp D  &kp V                    &none    &none  &kp K                  &kp H  &smart_comma  &smart_period  &kp ENTER
-                     &none  &spaceSuperLeft 7 SPACE  &none    &none  &mt RIGHT_SHIFT SPACE  &none
+&kp Q  &kp W  &kp F  &kp P  &kp B                    &none    &none  &kp J                    &kp L  &kp U         &kp Y          &kp BSPC
+&kp A  &kp R  &kp S  &kp T  &kp G                    &none    &none  &kp M                    &kp N  &kp E         &kp I          &kp O
+&kp Z  &kp X  &kp C  &kp D  &kp V                    &none    &none  &kp K                    &kp H  &smart_comma  &smart_period  &kp ENTER
+                     &none  &spaceSuperLeft 3 SPACE  &none    &none  &spaceSuperLeft 3 SPACE  &none
             >;
         };
 
         symbols_layer {
             bindings = <
-&none                     &none                     &none                    &none                      &none              &none    &none  &none          &none                    &none                         &none                           &trans
-&smart_thenxx LEFT_GUI 0  &smart_bracketxx LCTRL 0  &smart_parenxx LSHIFT 0  &smart_bracexx LEFT_ALT 0  &smart_plus_minus  &none    &none  &smart_equal   &smart_atxx RIGHT_ALT 0  &smart_tildexx RIGHT_SHIFT 0  &HRMR RIGHT_CONTROL APOSTROPHE  &smart_markxx RIGHT_GUI 0
-&smart_and                &none                     &none                    &none                      &smart_multi_div   &none    &none  &smart_remain  &smart_under             &trans                        &trans                          &trans
-                                                                             &kp SPACE                  &kp SPACE          &to 0    &to 2  &kp SPACE      &kp SPACE
+&kp DOLLAR  &superquoteFinal   &kp TILDE              &none            &kp HASH                 &none    &none  &kp EXCL                 &kp QUESTION    &kp AMPERSAND  &kp PIPE         &kp BACKSPACE
+&kp LT      &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp PERCENT              &none    &none  &kp KP_EQUAL             &kp KP_PLUS     &kp KP_MINUS   &kp KP_MULTIPLY  &kp KP_DIVIDE
+&kp GT      &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp AT_SIGN              &none    &none  &kp BACKSLASH            &kp UNDERSCORE  &kp KP_COMMA   &kp PERIOD       &kp ENTER
+                                                      &none            &spaceSuperLeft 3 SPACE  &none    &none  &spaceSuperLeft 3 SPACE  &none
             >;
         };
 
         numbers_layer {
             bindings = <
-&none   &none                        &none                      &none                    &none      &none    &none  &none      &none                     &none                       &none                         &trans
-&trans  &HRML LEFT_CONTROL NUMBER_1  &HRML LEFT_SHIFT NUMBER_2  &HRML LEFT_ALT NUMBER_3  &trans     &none    &none  &trans     &HRMR RIGHT_ALT NUMBER_7  &HRMR RIGHT_SHIFT NUMBER_8  &HRMR RIGHT_CONTROL NUMBER_9  &trans
-&trans  &kp N4                       &kp N5                     &kp N6                   &trans     &none    &none  &trans     &kp N0                    &trans                      &trans                        &trans
-                                                                &kp SPACE                &kp SPACE  &to 1    &to 0  &kp SPACE  &kp SPACE
+&kp DOLLAR  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp HASH                 &none    &none  &kp EXCL                 &kp QUESTION    &kp AMPERSAND  &kp PIPE         &kp BACKSPACE
+&kp LT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PERCENT              &none    &none  &kp KP_EQUAL             &kp KP_PLUS     &kp KP_MINUS   &kp KP_MULTIPLY  &kp KP_DIVIDE
+&kp GT      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp AT_SIGN              &none    &none  &kp BACKSLASH            &kp UNDERSCORE  &kp KP_COMMA   &kp PERIOD       &kp ENTER
+                                              &none            &spaceSuperLeft 3 SPACE  &none    &none  &spaceSuperLeft 3 SPACE  &none
             >;
         };
 
-        navigation_layer {
+        super_layer {
             bindings = <
-&none  &none           &none           &none            &none  &none    &none  &none            &none          &none      &none  &none
-&none  &none           &kp UP_ARROW    &none            &none  &none    &none  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RCTRL  &none  &kp BACKSPACE
-&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none    &none  &none            &none          &none      &none  &none
-                                       &none            &none  &to 0    &to 0  &to 0            &none
+&kp ESCAPE       &none               &none           &none                 &none               &none    &none  &none   &none   &none  &none  &kp BACKSPACE
+&kp TAB          &superMod LEFT_ALT  &kp UP_ARROW    &superMod LEFT_SHIFT  &none               &none    &none  &tog 1  &tog 2  &none  &none  &none
+&superMod LCTRL  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW       &superMod LEFT_GUI  &none    &none  &none   &none   &none  &none  &kp ENTER
+                                                     &none                 &to 0               &none    &none  &to 0   &none
             >;
         };
 
-        FN {
+        wasd {
             bindings = <
-&none  &none  &none   &none   &none   &none      &none    &none   &none    &none   &none  &none
-&none  &none  &kp F1  &kp F2  &kp F3  &kp F11    &kp F12  &kp F4  &kp F5   &kp F6  &none  &none
-&none  &none  &none   &kp F7  &kp F8  &none      &none    &kp F9  &kp F10  &none   &none  &none
-                      &none   &none   &none      &none    &none   &none
-            >;
-        };
-
-        LoL {
-            bindings = <
-&kp ESC    &kp N1   &kp N2  &kp N3    &kp N4    &kp T                   &none  &none  &none  &none  &none  &none
-&kp TAB    &kp TAB  &kp Q   &kp W     &kp E     &kp R                   &none  &none  &none  &none  &none  &none
-&kp LCTRL  &none    &kp A   &kp S     &kp D     &kp F                   &none  &none  &none  &none  &none  &none
-                            &kp LALT  &kp LALT  &mt LEFT_SHIFT SPACE    &none  &none  &to 0
-            >;
-        };
-
-        layer_8 {
-            bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5       &none  &none  &none  &none  &none  &none
-&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T        &none  &none  &none  &none  &none  &none
-&kp LCTRL  &kp A   &kp S   &kp D     &kp F      &kp G        &none  &none  &none  &none  &none  &none
-                           &kp LALT  &kp SPACE  &kp LSHFT    &none  &none  &none
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-&none            &none                 &none           &none               &none         &none    &none  &none  &none  &none  &none  &none
-&kp TAB          &superMod LEFT_SHIFT  &kp UP_ARROW    &superMod LEFT_ALT  &none         &none    &none  &none  &none  &none  &none  &none
-&superMod LCTRL  &kp LEFT_ARROW        &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp LEFT_GUI  &none    &none  &none  &none  &none  &none  &none
-                                                       &none               &to 0         &none    &none  &none  &none
+&kp ESC    &kp N1  &kp N2  &kp N3  &kp N4     &none    &none  &none  &none  &none  &none  &none
+&kp TAB    &kp Q   &kp W   &kp E   &kp R      &none    &none  &none  &none  &none  &none  &none
+&kp LCTRL  &kp A   &kp S   &kp D   &kp F      &none    &none  &none  &none  &none  &none  &none
+                           &none   &kp SPACE  &none    &none  &none  &none
             >;
         };
     };
