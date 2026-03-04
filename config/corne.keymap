@@ -357,10 +357,10 @@
 
         base_layer {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P  &kp B     &none    &none  &kp J      &kp L  &kp U         &kp Y          &kp BSPC
-&kp A  &kp R  &kp S  &kp T  &kp G     &none    &none  &kp M      &kp N  &kp E         &kp I          &kp O
-&kp Z  &kp X  &kp C  &kp D  &kp V     &none    &none  &kp K      &kp H  &smart_comma  &smart_period  &kp ENTER
-                     &none  &TDspace  &none    &none  &kp SPACE  &none
+&kp Q  &kp W  &kp F  &kp P  &kp B     &none    &none  &kp J                  &kp L  &kp U         &kp Y          &kp BSPC
+&kp A  &kp R  &kp S  &kp T  &kp G     &none    &none  &kp M                  &kp N  &kp E         &kp I          &kp O
+&kp Z  &kp X  &kp C  &kp D  &kp V     &none    &none  &kp K                  &kp H  &smart_comma  &smart_period  &kp ENTER
+                     &none  &TDspace  &none    &none  &mt RIGHT_SHIFT SPACE  &none
             >;
         };
 
@@ -420,10 +420,10 @@
 
         layer_7 {
             bindings = <
-&none               &none                   &none                 &none               &none  &none    &none  &none  &none  &none  &none  &none
-&superMod LEFT_GUI  &superMod LEFT_CONTROL  &superMod LEFT_SHIFT  &superMod LEFT_ALT  &none  &none    &none  &none  &none  &none  &none  &none
-&none               &none                   &none                 &none               &none  &none    &none  &none  &none  &none  &none  &none
-                                                                  &none               &to 0  &none    &none  &none  &none
+&none            &none                 &none           &none               &none         &none    &none  &none  &none  &none  &none  &none
+&kp TAB          &superMod LEFT_SHIFT  &kp UP_ARROW    &superMod LEFT_ALT  &none         &none    &none  &none  &none  &none  &none  &none
+&superMod LCTRL  &kp LEFT_ARROW        &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp LEFT_GUI  &none    &none  &none  &none  &none  &none  &none
+                                                       &none               &to 0         &none    &none  &none  &none
             >;
         };
     };
