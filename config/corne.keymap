@@ -269,6 +269,33 @@
             #binding-cells = <0>;
             mods = <(MOD_RSFT|MOD_LSFT)>;
         };
+
+        TDspace: TDspace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDSPACE";
+            #binding-cells = <0>;
+            bindings = <&spaceSuperLeft 7 SPACE>, <&kp TAB>;
+        };
+
+        spaceSuperLeft: spaceSuperLeft {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPACESUPERLEFT";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+        };
+
+        superMod: superMod {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SUPERMOD";
+            bindings = <&sk>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+        };
     };
 
     combos {
@@ -319,7 +346,8 @@
         new_macro: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&none>, <&macro_press>;
+
             label = "NEW_MACRO";
         };
     };
@@ -327,12 +355,12 @@
     keymap {
         compatible = "zmk,keymap";
 
-        cole_layer {
+        base_layer {
             bindings = <
-&kp Q             &kp W                 &kp F               &kp P             &kp B      &none    &none  &kp J      &kp L              &kp U                &kp Y                  &kp BSPC
-&HRML LEFT_GUI A  &HRML LEFT_CONTROL R  &HRML LEFT_SHIFT S  &HRML LEFT_ALT T  &kp G      &none    &none  &kp M      &HRMR RIGHT_ALT N  &HRMR RIGHT_SHIFT E  &HRMR RIGHT_CONTROL I  &HRMR RIGHT_GUI O
-&kp Z             &kp X                 &kp C               &kp D             &kp V      &none    &none  &kp K      &kp H              &smart_comma         &smart_period          &kp ENTER
-                                                            &kp SPACE         &kp SPACE  &to 1    &to 2  &kp SPACE  &kp SPACE
+&kp Q  &kp W  &kp F  &kp P  &kp B     &none    &none  &kp J      &kp L  &kp U         &kp Y          &kp BSPC
+&kp A  &kp R  &kp S  &kp T  &kp G     &none    &none  &kp M      &kp N  &kp E         &kp I          &kp O
+&kp Z  &kp X  &kp C  &kp D  &kp V     &none    &none  &kp K      &kp H  &smart_comma  &smart_period  &kp ENTER
+                     &none  &TDspace  &none    &none  &kp SPACE  &none
             >;
         };
 
@@ -387,6 +415,15 @@
 &kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T        &none  &none  &none  &none  &none  &none
 &kp LCTRL  &kp A   &kp S   &kp D     &kp F      &kp G        &none  &none  &none  &none  &none  &none
                            &kp LALT  &kp SPACE  &kp LSHFT    &none  &none  &none
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&none               &none                   &none                 &none               &none  &none    &none  &none  &none  &none  &none  &none
+&superMod LEFT_GUI  &superMod LEFT_CONTROL  &superMod LEFT_SHIFT  &superMod LEFT_ALT  &none  &none    &none  &none  &none  &none  &none  &none
+&none               &none                   &none                 &none               &none  &none    &none  &none  &none  &none  &none  &none
+                                                                  &none               &to 0  &none    &none  &none  &none
             >;
         };
     };
