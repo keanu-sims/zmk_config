@@ -316,6 +316,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
+
+        TDshift: TDshift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDSHIFT";
+            #binding-cells = <0>;
+            bindings = <&superMod LEFT_SHIFT>, <&kt LEFT_SHIFT>;
+
+            tapping-term-ms = <100>;
+        };
     };
 
     combos {
@@ -337,7 +346,7 @@
 
         s {
             bindings = <&tog 4>;
-            key-positions = <37 40>;
+            key-positions = <>;
             layers = <0 4>;
         };
     };
@@ -368,7 +377,7 @@
             bindings = <
 &kp DOLLAR  &superquoteFinal   &kp TILDE              &none            &kp HASH                 &none    &none  &kp EXCL                 &kp QUESTION    &kp AMPERSAND  &kp PIPE         &kp BACKSPACE
 &kp LT      &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp PERCENT              &none    &none  &kp KP_EQUAL             &kp KP_PLUS     &kp KP_MINUS   &kp KP_MULTIPLY  &kp KP_DIVIDE
-&kp GT      &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp AT_SIGN              &none    &none  &kp BACKSLASH            &kp UNDERSCORE  &kp KP_COMMA   &kp PERIOD       &kp ENTER
+&kp GT      &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp AT_SIGN              &none    &none  &kp BACKSLASH            &kp UNDERSCORE  &kp COMMA      &kp PERIOD       &kp ENTER
                                                       &none            &spaceSuperLeft 3 SPACE  &none    &none  &spaceSuperLeft 3 SPACE  &none
             >;
         };
