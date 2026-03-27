@@ -400,10 +400,10 @@
 
         wasd {
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3  &kp N4                &none    &none  &none  &none  &none  &none  &none
-&kp TAB    &kp Q   &kp W   &kp E   &kp R                 &none    &none  &none  &none  &none  &none  &none
-&kp LCTRL  &kp A   &kp S   &kp D   &kp F                 &none    &none  &none  &none  &none  &none  &none
-                           &none   &mt LEFT_SHIFT SPACE  &none    &none  &none  &none
+&kp ESC    &kp N1  &kp N2  &kp N3  &kp N4            &none    &none  &none  &none  &none  &none  &none
+&kp TAB    &kp Q   &kp W   &kp E   &kp R             &none    &none  &none  &none  &none  &none  &none
+&kp LCTRL  &kp A   &kp S   &kp D   &kp F             &none    &none  &none  &none  &none  &none  &none
+                           &none   &mt LEFT_SHIFT Y  &none    &none  &none  &none
             >;
         };
     };
