@@ -319,7 +319,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDSHIFT";
             #binding-cells = <0>;
-            bindings = <&superMod LEFT_SHIFT>, <&kt LEFT_SHIFT>;
+            bindings = <&superMod LEFT_SHIFT>, <&kp CAPS>;
 
             tapping-term-ms = <100>;
         };
@@ -391,10 +391,10 @@
 
         super_layer {
             bindings = <
-&kp ESCAPE       &none               &none           &none                 &none               &none    &none  &none  &none  &none  &none  &kp BACKSPACE
-&kp TAB          &superMod LEFT_ALT  &kp UP_ARROW    &superMod LEFT_SHIFT  &none               &none    &none  &none  &to 1  &to 2  &none  &none
-&superMod LCTRL  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW       &superMod LEFT_GUI  &none    &none  &none  &none  &none  &none  &kp ENTER
-                                                     &none                 &to 0               &none    &none  &to 0  &none
+&kp ESCAPE       &none               &none           &none            &none               &none    &none  &none  &none  &none  &none  &kp BACKSPACE
+&kp TAB          &superMod LEFT_ALT  &kp UP_ARROW    &TDshift         &none               &none    &none  &none  &to 1  &to 2  &none  &none
+&superMod LCTRL  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW  &superMod LEFT_GUI  &none    &none  &none  &none  &none  &none  &kp ENTER
+                                                     &none            &to 0               &none    &none  &to 0  &none
             >;
         };
 
