@@ -321,7 +321,7 @@
             #binding-cells = <0>;
             bindings = <&superMod LEFT_SHIFT>, <&kp CAPS>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
         };
     };
 
