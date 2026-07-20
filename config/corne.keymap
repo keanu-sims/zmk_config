@@ -274,7 +274,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDSPACE";
             #binding-cells = <0>;
-            bindings = <&spaceSuper 3 SPACE>, <&kp TAB>;
+            bindings = <&spaceSuper 0 SPACE>, <&kp TAB>;
         };
 
         spaceSuper: spaceSuper {
@@ -344,19 +344,16 @@
             key-positions = <1 2 0>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
-            layers = <0>;
         };
 
         delete {
             bindings = <&kp DELETE>;
             key-positions = <11 10>;
-            layers = <0 1 3>;
         };
 
         s {
-            bindings = <&tog 4>;
+            bindings = <&tog 0>;
             key-positions = <16 15 19 20>;
-            layers = <0 4>;
         };
     };
 
@@ -374,48 +371,12 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer {
+        layer_0 {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P  &kp B                &none    &none  &kp J                &kp L  &kp U         &kp Y          &kp BSPC
-&kp A  &kp R  &kp S  &kp T  &kp G                &none    &none  &kp M                &kp N  &kp E         &kp I          &kp O
-&kp Z  &kp X  &kp C  &kp D  &kp V                &none    &none  &kp K                &kp H  &smart_comma  &smart_period  &kp ENTER
-                     &none  &spaceSuper 3 SPACE  &none    &none  &spaceSuper 3 SPACE  &none
-            >;
-        };
-
-        symbols_layer {
-            bindings = <
-&kp DOLLAR  &superquoteFinal   &kp TILDE              &none            &kp HASH             &none    &none  &kp EXCL             &kp QUESTION    &kp AMPERSAND  &kp PIPE         &kp BACKSPACE
-&kp LT      &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp PERCENT          &none    &none  &kp KP_EQUAL         &kp KP_PLUS     &kp KP_MINUS   &kp KP_MULTIPLY  &kp KP_DIVIDE
-&kp GT      &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp AT_SIGN          &none    &none  &kp BACKSLASH        &kp UNDERSCORE  &kp COMMA      &kp PERIOD       &kp ENTER
-                                                      &none            &spaceSuper 3 SPACE  &none    &none  &spaceSuper 3 SPACE  &none
-            >;
-        };
-
-        numbers_layer {
-            bindings = <
-&kp DOLLAR  &kp N7  &kp N8  &kp N9  &kp HASH             &none    &none  &kp EXCL             &kp QUESTION    &kp AMPERSAND  &kp PIPE         &kp BACKSPACE
-&kp LT      &kp N4  &kp N5  &kp N6  &kp PERCENT          &none    &none  &kp KP_EQUAL         &kp KP_PLUS     &kp KP_MINUS   &kp KP_MULTIPLY  &kp KP_DIVIDE
-&kp GT      &kp N1  &kp N2  &kp N3  &kp N0               &none    &none  &kp BACKSLASH        &kp UNDERSCORE  &kp COMMA      &kp PERIOD       &kp ENTER
-                            &none   &spaceSuper 3 SPACE  &none    &none  &spaceSuper 3 SPACE  &none
-            >;
-        };
-
-        super_layer {
-            bindings = <
-&kp ESCAPE       &none               &none           &none            &none               &none    &none  &none  &none  &none  &none  &kp BACKSPACE
-&kp TAB          &superMod LEFT_ALT  &kp UP_ARROW    &TDshift         &none               &none    &none  &none  &to 1  &to 2  &none  &none
-&superMod LCTRL  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW  &superMod LEFT_GUI  &none    &none  &none  &none  &none  &none  &kp ENTER
-                                                     &none            &to 0               &none    &none  &to 0  &none
-            >;
-        };
-
-        wasd {
-            bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3  &kp N4                       &none    &none  &none  &none  &none  &none  &none
-&kp TAB    &kp Q   &kp W   &kp E   &kp R                        &none    &none  &none  &none  &none  &none  &none
-&kp LCTRL  &kp A   &kp S   &kp D   &kp F                        &none    &none  &none  &none  &none  &none  &none
-                           &none   &   wasd_space LEFT_SHIFT 0  &none    &none  &none  &none
+&kp Q  &kp W  &kp F  &kp P   &kp B   &kp B     &trans  &kp J   &kp L   &kp U      &kp L    &kp Y
+&kp A  &kp R  &kp S  &kp T   &kp G   &trans    &trans  &kp M   &kp N   &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C  &kp D   &kp V   &trans    &trans  &kp K   &kp H   &kp COMMA  &kp DOT  &kp RET
+                     &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
