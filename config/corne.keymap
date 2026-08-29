@@ -378,7 +378,7 @@
             bindings = <
 &kp Q  &kp W  &kp F  &kp P         &kp B                &none    &none  &kp J                &kp L          &kp U         &kp Y          &kp BSPC
 &kp A  &kp R  &kp S  &kp T         &kp G                &none    &none  &kp M                &kp N          &kp E         &kp I          &kp O
-&kp Z  &kp X  &kp C  &kp D         &kp E                &none    &none  &kp K                &kp H          &smart_comma  &smart_period  &kp ENTER
+&kp Z  &kp X  &kp C  &kp D         &kp V                &none    &none  &kp K                &kp H          &smart_comma  &smart_period  &kp ENTER
                      &kp LEFT_ALT  &spaceSuper 3 SPACE  &none    &none  &spaceSuper 3 SPACE  &kp RIGHT_ALT
             >;
         };
