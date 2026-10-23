@@ -341,7 +341,7 @@
 
         boot_left {
             bindings = <&bootloader>;
-            key-positions = <1 2 0>;
+            key-positions = <1 2 3>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
             layers = <0>;
