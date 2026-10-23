@@ -349,7 +349,7 @@
 
         delete {
             bindings = <&kp DELETE>;
-            key-positions = <11 10>;
+            key-positions = <10 9 10>;
             layers = <0 1 3>;
         };
 
