@@ -341,7 +341,7 @@
 
         boot_left {
             bindings = <&bootloader>;
-            key-positions = <1 2 3>;
+            key-positions = <1 2 0>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
             layers = <0>;
@@ -349,7 +349,7 @@
 
         delete {
             bindings = <&kp DELETE>;
-            key-positions = <10 9 10>;
+            key-positions = <10 10 11>;
             layers = <0 1>;
         };
 
@@ -376,10 +376,10 @@
 
         base_layer {
             bindings = <
-&none  &kp Q  &kp W  &kp F  &kp P     &kp B                  &kp J                &kp L          &kp U      &kp Y    &kp BSPC  &none
-&none  &kp A  &kp R  &kp S  &kp T     &kp G                  &kp M                &kp N          &kp E      &kp I    &kp O     &none
-&none  &kp Z  &kp X  &kp C  &kp D     &kp V                  &kp K                &kp H          &kp COMMA  &kp DOT  &kp RET   &none
-                     &none  &kp LALT  &spaceSuper 1 SPACE    &spaceSuper 1 SPACE  &kp RIGHT_ALT  &none
+&kp Q  &kp W  &kp F  &kp P     &kp B                &none    &none  &kp J      &kp L  &kp U      &kp Y    &kp BSPC
+&kp A  &kp R  &kp S  &kp T     &kp G                &none    &none  &kp M      &kp N  &kp E      &kp O    &kp I
+&kp I  &kp X  &kp C  &kp D     &kp V                &none    &none  &kp K      &kp H  &kp COMMA  &kp DOT  &kp RET
+                     &kp LALT  &spaceSuper 1 SPACE  &none    &none  &kp SPACE  &none
             >;
         };
 
@@ -394,10 +394,10 @@
 
         wasd {
             bindings = <
-&none  &kp ESC    &kp N1  &kp N2        &kp N3        &kp N4                  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &none
-&none  &kp TAB    &kp Q   &kp W         &kp E         &kp R                   &kp T   &kp Y   &kp U   &kp I   &kp O   &none
-&none  &kp LCTRL  &kp A   &kp S         &kp D         &kp F                   &kp G   &kp H   &kp J   &kp K   &kp L   &none
-                          &kp LEFT_ALT  &kp LEFT_ALT  &mt LEFT_SHIFT SPACE    &none   &none   &none
+&kp ESC    &kp N1  &kp N2  &kp N3        &kp N4                &none    &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &none
+&kp TAB    &kp Q   &kp W   &kp E         &kp R                 &none    &kp T   &kp Y   &kp U   &kp I   &kp O   &none
+&kp LCTRL  &kp A   &kp S   &kp D         &kp F                 &none    &kp G   &kp H   &kp J   &kp K   &kp L   &none
+                           &kp LEFT_ALT  &mt LEFT_SHIFT SPACE  &none    &none   &none   &none
             >;
         };
     };
