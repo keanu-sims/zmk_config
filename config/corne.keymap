@@ -274,7 +274,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TDSPACE";
             #binding-cells = <0>;
-            bindings = <&spaceSuper 1 SPACE>, <&kp TAB>;
+            bindings = <&spaceSuper 0 SPACE>, <&kp TAB>;
         };
 
         spaceSuper: spaceSuper {
@@ -315,11 +315,11 @@
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        TDshift: TDshift {
+        shiftcaps: shiftcaps {
             compatible = "zmk,behavior-tap-dance";
-            label = "TDSHIFT";
+            label = "SHIFTCAPS";
             #binding-cells = <0>;
-            bindings = <&superMod LEFT_SHIFT>, <&kp CAPS>;
+            bindings = <&sk LEFT_SHIFT>, <&kp CAPS>;
 
             tapping-term-ms = <200>;
         };
@@ -350,13 +350,13 @@
         delete {
             bindings = <&kp DELETE>;
             key-positions = <10 10 11>;
-            layers = <0 1>;
+            layers = <0>;
         };
 
         s {
-            bindings = <&tog 2>;
+            bindings = <&tog 4>;
             key-positions = <16 15 19 20>;
-            layers = <0 2>;
+            layers = <0 4>;
         };
     };
 
@@ -376,19 +376,37 @@
 
         base_layer {
             bindings = <
-&kp Q  &kp W  &kp F  &kp P     &kp B                &none    &none  &kp J      &kp L  &kp U      &kp Y    &kp BSPC
-&kp A  &kp R  &kp S  &kp T     &kp G                &none    &none  &kp M      &kp N  &kp E      &kp I    &kp O
-&kp Z  &kp X  &kp C  &kp D     &kp V                &none    &none  &kp K      &kp H  &kp COMMA  &kp DOT  &kp RET
-                     &kp LALT  &spaceSuper 1 SPACE  &none    &none  &kp SPACE  &none
+&kp Q  &kp W  &kp F  &kp P  &kp B        &none    &none  &kp J      &kp L  &kp U      &kp Y    &kp BSPC
+&kp A  &kp R  &kp S  &kp T  &kp G        &none    &none  &kp M      &kp N  &kp E      &kp I    &kp O
+&kp Z  &kp X  &kp C  &kp D  &kp V        &none    &none  &kp K      &kp H  &kp COMMA  &kp DOT  &kp RET
+                     &none  &lt 1 SPACE  &none    &none  &kp SPACE  &none
             >;
         };
 
-        super_layer {
+        left {
             bindings = <
-&kp ESCAPE       &none               &none           &none            &none               &none    &none  &none  &none  &none  &none  &kp BACKSPACE
-&kp TAB          &superMod LEFT_ALT  &kp UP_ARROW    &TDshift         &none               &none    &none  &none  &to 0  &to 0  &none  &none
-&superMod LCTRL  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW  &superMod LEFT_GUI  &none    &none  &none  &none  &none  &none  &kp ENTER
-                                                     &none            &to 0               &none    &none  &to 0  &none
+&kp ESCAPE  &none         &none             &none       &none         &none    &none  &none  &none  &none  &none  &kp BACKSPACE
+&kp TAB     &sk LEFT_ALT  &sk LEFT_CONTROL  &shiftcaps  &sk LEFT_GUI  &none    &none  &none  &none  &none  &none  &none
+&none       &none         &none             &none       &sl 3         &none    &none  &none  &none  &none  &none  &kp ENTER
+                                            &none       &none         &none    &none  &none  &none
+            >;
+        };
+
+        right {
+            bindings = <
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+                     &none  &none  &none    &none  &none  &none
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &none    &none  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
+&none   &none   &none   &none   &none   &none    &none  &kp N0  &kp N4  &kp N5  &kp N6  &none
+&none   &none   &none   &none   &none   &none    &none  &none   &kp N1  &kp N2  &kp N3  &none
+                        &none   &none   &none    &none  &none   &none
             >;
         };
 
