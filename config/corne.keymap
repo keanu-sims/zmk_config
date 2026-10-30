@@ -7,7 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-&lt { flavor = "tap-unless-interrupted"; };
+&lt { flavor = "hold-preferred"; };
 
 / {
     behaviors {
