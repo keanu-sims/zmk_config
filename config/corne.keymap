@@ -83,6 +83,15 @@
 
             tapping-term-ms = <200>;
         };
+
+        StickyNumbers: StickyNumbers {
+            compatible = "zmk,behavior-tap-dance";
+            label = "STICKYNUMBERS";
+            #binding-cells = <0>;
+            bindings = <&sl 3>, <&tog 3>;
+
+            tapping-term-ms = <200>;
+        };
     };
 
     combos {
@@ -103,9 +112,9 @@
         };
 
         s {
-            bindings = <&tog 4>;
+            bindings = <&tog 5>;
             key-positions = <16 15 19 20>;
-            layers = <0 4>;
+            layers = <0 5>;
         };
     };
 
@@ -134,9 +143,9 @@
 
         left {
             bindings = <
-&kp ESCAPE  &none                &none                    &none       &none                &none    &none  &none  &none  &none  &none  &kp BACKSPACE
-&kp TAB     &stickyMod LEFT_ALT  &stickyMod LEFT_CONTROL  &shiftcaps  &stickyMod LEFT_GUI  &none    &none  &none  &none  &none  &none  &none
-&none       &none                &none                    &none       &sl 3                &none    &none  &none  &none  &none  &none  &kp ENTER
+&kp ESCAPE  &none                &none                    &none       &none                &none    &none  &none  &none           &none  &none  &kp BACKSPACE
+&kp TAB     &stickyMod LEFT_ALT  &stickyMod LEFT_CONTROL  &shiftcaps  &stickyMod LEFT_GUI  &none    &none  &none  &StickyNumbers  &none  &none  &none
+&none       &none                &none                    &none       &none                &none    &none  &none  &none           &none  &none  &kp ENTER
                                                           &none       &none                &none    &none  &none  &none
             >;
         };
@@ -150,12 +159,21 @@
             >;
         };
 
-        layer_4 {
+        number {
             bindings = <
 &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &none    &none  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
 &none   &none   &none   &none   &none   &none    &none  &kp N0  &kp N4  &kp N5  &kp N6  &none
 &none   &none   &none   &none   &none   &none    &none  &none   &kp N1  &kp N2  &kp N3  &none
                         &none   &none   &none    &none  &none   &none
+            >;
+        };
+
+        symbols {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
