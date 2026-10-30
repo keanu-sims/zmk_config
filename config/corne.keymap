@@ -145,7 +145,7 @@
             bindings = <
 &kp ESCAPE  &none                &none                    &none       &none                &none    &none  &none  &none           &none  &none  &kp BACKSPACE
 &kp TAB     &stickyMod LEFT_ALT  &stickyMod LEFT_CONTROL  &shiftcaps  &stickyMod LEFT_GUI  &none    &none  &none  &StickyNumbers  &none  &none  &none
-&none       &none                &none                    &none       &none                &none    &none  &none  &none           &none  &none  &kp ENTER
+&none       &none                &none                    &none       &kp EXCLAMATION      &none    &none  &none  &none           &none  &none  &kp ENTER
                                                           &none       &none                &none    &none  &none  &none
             >;
         };
