@@ -284,7 +284,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
+            flavor = "tap-unless-interrupted";
         };
 
         superMod: superMod {
